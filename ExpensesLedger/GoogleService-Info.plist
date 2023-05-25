@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>345778558752-s4dacq910dl4rh7pkhs7aqamfgcaigvp.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.345778558752-s4dacq910dl4rh7pkhs7aqamfgcaigvp</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC-COXYYhdQ8EPnCQA0ObXCq51mWFK4Q3Q</string>
+	<key>GCM_SENDER_ID</key>
+	<string>345778558752</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.nas.ExpensesLedger</string>
+	<key>PROJECT_ID</key>
+	<string>fir-crashapp-7264a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fir-crashapp-7264a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:345778558752:ios:fe9e1ab0eb3a828371a945</string>
+</dict>
+</plist>
