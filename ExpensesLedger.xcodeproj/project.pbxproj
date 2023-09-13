@@ -35,6 +35,7 @@
 		29DEF97B2A017E4100AC2338 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DEF97A2A017E4100AC2338 /* UserManager.swift */; };
 		29DEF97D2A018AA800AC2338 /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DEF97C2A018AA800AC2338 /* DBUser.swift */; };
 		29DEF97F2A018B1700AC2338 /* AuthDataResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DEF97E2A018B1700AC2338 /* AuthDataResultModel.swift */; };
+		29E5F1112AB1D0AD00BABDCC /* BottomBarTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E5F1102AB1D0AD00BABDCC /* BottomBarTextField.swift */; };
 		29EEA5FD29F54AED00CC47F2 /* SignInParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EEA5FC29F54AED00CC47F2 /* SignInParent.swift */; };
 		29EEA5FF29F54AFD00CC47F2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EEA5FE29F54AFD00CC47F2 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		29DEF97A2A017E4100AC2338 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		29DEF97C2A018AA800AC2338 /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
 		29DEF97E2A018B1700AC2338 /* AuthDataResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataResultModel.swift; sourceTree = "<group>"; };
+		29E5F1102AB1D0AD00BABDCC /* BottomBarTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarTextField.swift; sourceTree = "<group>"; };
 		29EEA5FC29F54AED00CC47F2 /* SignInParent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInParent.swift; sourceTree = "<group>"; };
 		29EEA5FE29F54AFD00CC47F2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +101,7 @@
 		292EDEF42AB0CE1600E04723 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				29E5F1122AB1D23300BABDCC /* Reuseable Views */,
 				292EDEFB2AB0CF6100E04723 /* ViewModels */,
 				292EDEFA2AB0CF5700E04723 /* Models */,
 				292EDEF92AB0CF4F00E04723 /* Views */,
@@ -152,7 +155,6 @@
 				29EEA5FC29F54AED00CC47F2 /* SignInParent.swift */,
 				29EEA5FE29F54AFD00CC47F2 /* SignUpView.swift */,
 				29A11CFB2A05662500773B85 /* ForgotPasswordView.swift */,
-				297EDFC82A0A5E9D00BF2221 /* PasswordField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -236,6 +238,15 @@
 				29DEF97A2A017E4100AC2338 /* UserManager.swift */,
 			);
 			path = FirebaseManager;
+			sourceTree = "<group>";
+		};
+		29E5F1122AB1D23300BABDCC /* Reuseable Views */ = {
+			isa = PBXGroup;
+			children = (
+				29E5F1102AB1D0AD00BABDCC /* BottomBarTextField.swift */,
+				297EDFC82A0A5E9D00BF2221 /* PasswordField.swift */,
+			);
+			path = "Reuseable Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +349,7 @@
 				299EE44B29FA926F008217F7 /* Sidebar.swift in Sources */,
 				29DEF9782A015FB800AC2338 /* ProfileVM.swift in Sources */,
 				295D28CB29EF37FB008D9D7F /* BudgetProgressBar.swift in Sources */,
+				29E5F1112AB1D0AD00BABDCC /* BottomBarTextField.swift in Sources */,
 				29DEF97B2A017E4100AC2338 /* UserManager.swift in Sources */,
 				29A11CFC2A05662500773B85 /* ForgotPasswordView.swift in Sources */,
 				29DEF97F2A018B1700AC2338 /* AuthDataResultModel.swift in Sources */,

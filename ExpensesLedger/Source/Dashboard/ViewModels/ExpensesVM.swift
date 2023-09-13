@@ -10,26 +10,25 @@ import FirebaseFirestore
 
 @MainActor
 class ExpensesVM: ObservableObject {
-    let directory = "Expense"
+    
     @Published var expenses = [Expense]()
     @Published var title: String = ""
     @Published var desc: String = ""
     @Published var amount: Float = 0
     @Published var date: Date = Date.now
-    
-    init() {
-        
-    }
-    
+    let directory = "Expense"
     var formatter: NumberFormatter {
         let nf = NumberFormatter()
-        nf.zeroSymbol = ""
-        nf.nilSymbol = ""
-        nf.numberStyle = .decimal
+        nf.currencySymbol = Locale.current.currencySymbol ?? "NGN"
+        nf.numberStyle = .currency
         nf.allowsFloats = true
         return nf
     }
     
+    init() {
+        
+    }
+        
     func addExpense() {
         let expense = Expense(id: UUID().uuidString, title: title, description: desc, amount: amount, date: date)
         expenses.append(expense)

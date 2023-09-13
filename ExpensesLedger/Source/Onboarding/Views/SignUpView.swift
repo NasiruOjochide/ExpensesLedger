@@ -13,21 +13,11 @@ struct SignUpView: View {
     
     var body: some View {
         VStack {
-            VStack {
-                TextField("enter your email", text: $onboardingVM.email)
-                
-                Rectangle()
-                    .frame(height: 1)
-            }
-            .padding(.vertical)
+            BottomBarTextField(placeholder: "Enter your Email", text: $onboardingVM.email)
+                .padding(.vertical)
             
-            VStack {
-                SecureField("enter password", text: $onboardingVM.password)
-                
-                Rectangle()
-                    .frame(height: 1)
-            }
-            .padding(.vertical)
+            PasswordField(text: $onboardingVM.password)
+                .padding(.vertical)
             
             Button {
                 Task {

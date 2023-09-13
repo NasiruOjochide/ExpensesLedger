@@ -25,8 +25,6 @@ struct AddExpenseView: View {
                     }
                     
                     Section("Amount") {
-//                        TextField("enter amount", value: $expensesVM.amount, format: .currency(code: Locale.current.currencySymbol ?? "USD"))
-                            //.keyboardType(.decimalPad)
                         TextField("enter amount", value: $expensesVM.amount, formatter: expensesVM.formatter)
                             .keyboardType(.decimalPad)
                     }
@@ -59,6 +57,8 @@ struct AddExpenseView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             AddExpenseView()
+                .environmentObject(ExpensesVM())
+                .environmentObject(BudgetVM())
         }
     }
 }

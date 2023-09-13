@@ -17,19 +17,11 @@ struct SignInParent: View {
         NavigationStack(path: $navVM.path) {
             ZStack {
                 VStack {
+                    BottomBarTextField(placeholder: "Enter your Email", text: $onboardingVM.email)
+                        .padding(.vertical)
                     
-                    VStack {
-                        TextField("enter your email", text: $onboardingVM.email)
-                        
-                        Rectangle()
-                            .frame(height: 1)
-                    }
-                    .padding(.vertical)
-                    
-                    VStack {
-                        PasswordField(text: $onboardingVM.password)
-                    }
-                    .padding(.vertical)
+                    PasswordField(text: $onboardingVM.password)
+                        .padding(.vertical)
                     
                     HStack {
                         Spacer()
@@ -37,7 +29,7 @@ struct SignInParent: View {
                             Text("Forgot Password?")
                                 .italic()
                                 .foregroundColor(.blue)
-                                
+                            
                         }
                     }
                     

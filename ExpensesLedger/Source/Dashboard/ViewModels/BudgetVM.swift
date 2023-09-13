@@ -14,9 +14,6 @@ class BudgetVM: Codable, ObservableObject {
     @Published var costAccrued: Float = 0
     let userDefaultsKey = "budgetVM"
     private let userCollection = Firestore.firestore().collection("users")
-    private func userDocument(userID: String) -> DocumentReference {
-        userCollection.document(userID).collection("BudgetCollection").document("BudgetDocument")
-    }
     
     init() {
         
@@ -30,6 +27,10 @@ class BudgetVM: Codable, ObservableObject {
     func incrementProgress() {
         let randomValue = Float([50, 100, 150, 200, 250].randomElement() ?? 50)
         self.costAccrued += randomValue
+    }
+    
+    private func userDocument(userID: String) -> DocumentReference {
+        userCollection.document(userID).collection("BudgetCollection").document("BudgetDocument")
     }
     
     func save() {

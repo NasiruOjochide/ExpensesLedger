@@ -7,8 +7,10 @@
 
 import Foundation
 import SwiftUI
+
 @MainActor
-final class OnboardingViewModel: ObservableObject{
+final class OnboardingViewModel: ObservableObject {
+    
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var uid: String = ""
@@ -20,7 +22,7 @@ final class OnboardingViewModel: ObservableObject{
     }
     
     func signIn() async throws {
-        guard !email.isEmpty, !password.isEmpty else{
+        guard !email.isEmpty, !password.isEmpty else {
             throw URLError(.badServerResponse)
         }
         let _ = try await AuthenticationManager.shared.signIn(email: email, password: password)
@@ -45,8 +47,7 @@ final class OnboardingViewModel: ObservableObject{
         try await AuthenticationManager.shared.resetPassword(email: email)
     }
     
-    func updateEmail(/*email: String*/) async throws {
-        let email = "danjay@gmail.com"
+    func updateEmail(email: String) async throws {
         try await AuthenticationManager.shared.updateEmail(email: email)
     }
     

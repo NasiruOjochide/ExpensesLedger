@@ -23,7 +23,7 @@ struct ExpenseDetailsView: View {
                 .padding()
             VStack {
                 HStack(alignment: .center) {
-                    Text("Amount: \(expense.amount.formatted(.currency(code: Locale.current.currencySymbol ?? "NGN")))")
+                    Text("Amount: " + String(format: "%.2f", expense.amount))
                         .padding()
                 }
                 HStack(alignment: .center) {

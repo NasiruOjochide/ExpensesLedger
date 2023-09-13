@@ -13,10 +13,8 @@ struct ForgotPasswordView: View {
     
     var body: some View {
         VStack(alignment: .center) {
-            TextField("Enter Email", text: $onboardingVM.email)
-                .frame(maxWidth: 380)
-            Rectangle()
-                .frame(maxWidth: 380, maxHeight: 1)
+            BottomBarTextField(placeholder: "Enter your Email", text: $onboardingVM.email)
+                .padding(.vertical)
             
             Button {
                 Task {
