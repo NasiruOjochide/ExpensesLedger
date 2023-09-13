@@ -8,25 +8,26 @@
 import SwiftUI
 
 struct ForgotPasswordView: View {
-    @EnvironmentObject var signInVM : SignInEmailVM
-    @EnvironmentObject var navVM : NavigationVM
+    @EnvironmentObject var onboardingVM: OnboardingViewModel
+    @EnvironmentObject var navVM: NavigationVM
+    
     var body: some View {
-        VStack(alignment: .center){
-            TextField("Enter Email", text: $signInVM.email)
+        VStack(alignment: .center) {
+            TextField("Enter Email", text: $onboardingVM.email)
                 .frame(maxWidth: 380)
             Rectangle()
                 .frame(maxWidth: 380, maxHeight: 1)
             
-            Button{
-                Task{
-                    do{
-                        try await signInVM.resetPassword(email: signInVM.email)
-                        navVM.path.removeLast()
+            Button {
+                Task {
+                    do {
+                        try await onboardingVM.resetPassword(email: onboardingVM.email)
+                        navVM.pop()
                     }catch{
                         print("password reset failed")
                     }
                 }
-            }label: {
+            } label: {
                 Text("Submit")
                     .bold()
                     .padding()
@@ -47,13 +48,11 @@ struct ForgotPasswordView: View {
 }
 
 struct ForgotPasswordView_Previews: PreviewProvider {
-    static let vm = SignInEmailVM()
-    static let navVM = NavigationVM()
     static var previews: some View {
         NavigationStack{
             ForgotPasswordView()
-                .environmentObject(vm)
-                .environmentObject(navVM)
+                .environmentObject(OnboardingViewModel())
+                .environmentObject(NavigationVM())
         }
     }
 }

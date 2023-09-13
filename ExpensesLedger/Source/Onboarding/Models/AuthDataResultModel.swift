@@ -8,12 +8,12 @@
 import Foundation
 import Firebase
 
-struct AuthDataResultModel{
-    let uid : String
-    let email : String?
-    let photoURl : String?
-    let isAnonymous : Bool
-    let dateCreated : Date
+struct AuthDataResultModel {
+    let uid: String
+    let email: String?
+    let photoURl: String?
+    let isAnonymous: Bool
+    let dateCreated: Date
     
     init(user: User) {
         self.uid = user.uid

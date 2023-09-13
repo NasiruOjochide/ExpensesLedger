@@ -9,37 +9,48 @@ import Foundation
 import Firebase
 
 
-class BudgetVM : Codable, ObservableObject{
-    @Published var budget : Float = 0
-    @Published var costAccrued : Float = 0
+class BudgetVM: Codable, ObservableObject {
+    @Published var budget: Float = 0
+    @Published var costAccrued: Float = 0
     let userDefaultsKey = "budgetVM"
     private let userCollection = Firestore.firestore().collection("users")
-    private func userDocument(userID : String) -> DocumentReference{
+    private func userDocument(userID: String) -> DocumentReference {
         userCollection.document(userID).collection("BudgetCollection").document("BudgetDocument")
     }
-    init(){
+    
+    init() {
         
     }
     
-    func save(){
-        Task{
+    func updateCost(by amount: Float) {
+        self.costAccrued += amount
+        save()
+    }
+    
+    func incrementProgress() {
+        let randomValue = Float([50, 100, 150, 200, 250].randomElement() ?? 50)
+        self.costAccrued += randomValue
+    }
+    
+    func save() {
+        Task {
             self.saveToUserDefaults()
-            do{
+            do {
                 try await self.saveToFirebase()
-            }catch{
+            } catch {
                 print("save to firebase failed")
                 print(error.localizedDescription)
             }
         }
     }
     
-    func saveToFirebase()async throws{
+    func saveToFirebase() async throws {
         let dbUser = try await AuthenticationManager.shared.getAuthenticatedUser()
         let ref = userDocument(userID: dbUser.userId)
         try await ref.setData(["budget" : budget, "costAccrued" : costAccrued])
     }
     
-    func saveToUserDefaults(){
+    func saveToUserDefaults() {
         do {
             let encoder = JSONEncoder()
             let data = try encoder.encode(self)
@@ -48,19 +59,18 @@ class BudgetVM : Codable, ObservableObject{
             print("save to defaults failed")
             print(error.localizedDescription)
         }
-        
     }
     
-    func fetchfromFirebase()async throws{
+    func fetchfromFirebase() async throws {
         let dbUser = try await AuthenticationManager.shared.getAuthenticatedUser()
         let ref = userDocument(userID: dbUser.userId)
-        ref.addSnapshotListener{snapshot, error in
-            guard error == nil else{
+        ref.addSnapshotListener { snapshot, error in
+            guard error == nil else {
                 print(error!.localizedDescription)
                 self.fetchFromUserDefaults()
                 return
             }
-            guard let document = snapshot?.data() else{
+            guard let document = snapshot?.data() else {
                 print("document is empty")
                 return
             }
@@ -86,7 +96,7 @@ class BudgetVM : Codable, ObservableObject{
 
     }
     
-    func fetchFromUserDefaults(){
+    func fetchFromUserDefaults() {
         do {
             guard let data = UserDefaults.standard.data(forKey: userDefaultsKey) else { return }
             let decoder = JSONDecoder()
@@ -98,7 +108,7 @@ class BudgetVM : Codable, ObservableObject{
         }
     }
     
-    enum CodingKeys : CodingKey{
+    enum CodingKeys: CodingKey {
         case budget, costAccrued
     }
     

@@ -7,60 +7,54 @@
 
 import SwiftUI
 
-struct LoginView: View {
-    @EnvironmentObject var signInVM : SignInEmailVM
+struct SignInParent: View {
+    
+    @EnvironmentObject var onboardingVM : OnboardingViewModel
     @EnvironmentObject var navVM : NavigationVM
     @State private var showActivityView = false
+    
     var body: some View {
-        
         NavigationStack(path: $navVM.path) {
             ZStack {
-                VStack{
+                VStack {
                     
-                    VStack{
-                        TextField("enter your email", text: $signInVM.email)
+                    VStack {
+                        TextField("enter your email", text: $onboardingVM.email)
                         
                         Rectangle()
                             .frame(height: 1)
                     }
                     .padding(.vertical)
                     
-                    VStack{
-                        SecureField("enter password", text: $signInVM.password)
-                            .textInputAutocapitalization(.never)
-                            .autocorrectionDisabled(true)
-                        Rectangle()
-                            .frame(height: 1)
+                    VStack {
+                        PasswordField(text: $onboardingVM.password)
                     }
                     .padding(.vertical)
                     
-                    HStack{
+                    HStack {
                         Spacer()
-                        NavigationLink(value: "ForgotPasswordPage"){
+                        NavigationLink(value: Routes.forgotPassword) {
                             Text("Forgot Password?")
                                 .italic()
                                 .foregroundColor(.blue)
-                                .onTapGesture {
-                                    navVM.path.append("ForgotPasswordPage")
-                                }
+                                
                         }
                     }
                     
-                    NavigationLink(value: "ContentViewPage"){
-                        Button{
-                            Task{
-                                do{
+                    NavigationLink(value: "ContentViewPage") {
+                        Button {
+                            Task {
+                                do {
                                     showActivityView = true
-                                    try await signInVM.signIn()
+                                    try await onboardingVM.signIn()
                                     showActivityView = false
-                                    navVM.path.append("ContentViewPage")
-                                }
-                                catch{
+                                    navVM.push(Routes.dashboard)
+                                } catch {
                                     print(error.localizedDescription)
                                     showActivityView = false
                                 }
                             }
-                        }label: {
+                        } label: {
                             Text("Sign In")
                                 .bold()
                                 .padding()
@@ -68,7 +62,7 @@ struct LoginView: View {
                                 .background(.white)
                                 .foregroundColor(.red)
                                 .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
-                                .overlay{
+                                .overlay {
                                     RoundedRectangle(cornerRadius: 15, style: .continuous)
                                         .stroke(.red, lineWidth: 2)
                                 }
@@ -76,45 +70,36 @@ struct LoginView: View {
                         .padding(.vertical)
                     }
                     
-                    HStack{
+                    HStack {
                         Text("Don't have an account? ").italic()
-                        NavigationLink(value: "SignUpPage"){
-                            Text("Sign Up").bold().foregroundColor(.red).onTapGesture {
-                                navVM.path.append("SignUpPage")
-                            }
+                        NavigationLink(value: Routes.signUp) {
+                            Text("Sign Up")
+                                .bold()
+                                .foregroundColor(.red)
                         }
                     }
                     
                 }
-                .navigationDestination(for: String.self){
-                    if $0 == "ContentViewPage" {
-                        ContentView()
-                    }
-                    if $0 == "SignUpPage"{
-                        SignUpView()
-                    }
-                    if $0 == "ForgotPasswordPage"{
-                        ForgotPasswordView()
-                    }
-                }
                 .padding()
                 .opacity(showActivityView ? 0.1 : 1)
                 
-                if showActivityView{
-                    ActivityView(showView: $showActivityView)
+                if showActivityView {
+                    //ActivityView(showView: $showActivityView)
+                    
+                    ProgressView("Checking for existing user")
                 }
             }
             .navigationTitle("Log In")
-            .onAppear{
+            .onAppear {
                 print(navVM.path.count)
                 print("Login Screen appeared")
                 showActivityView = true
                 Task{
                     do{
-                        let _ = try await signInVM.getCurrentUser()
+                        let _ = try await onboardingVM.getCurrentUser()
                         showActivityView = false
                         print("user found")
-                        navVM.path.append("ContentViewPage")
+                        navVM.push(Routes.dashboard)
                         
                     }catch{
                         showActivityView = false
@@ -122,16 +107,15 @@ struct LoginView: View {
                     }
                 }
             }
+            .navigationDestination(for: Routes.self) { $0 }
         }
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
-    static let navVM = NavigationVM()
-    static let signInVM = SignInEmailVM()
     static var previews: some View {
-        LoginView()
-            .environmentObject(navVM)
-            .environmentObject(signInVM)
+        SignInParent()
+            .environmentObject(NavigationVM())
+            .environmentObject(OnboardingViewModel())
     }
 }

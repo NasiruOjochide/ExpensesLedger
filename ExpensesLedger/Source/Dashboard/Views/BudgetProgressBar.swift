@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct BudgetProgressBar: View {
-    @EnvironmentObject var  budgetVM : BudgetVM
+    @EnvironmentObject var  budgetVM: BudgetVM
     //@EnvironmentObject var CostAccrued : BudgetVM
-    var percentLeft : Int {
-        if budgetVM.budget > 0{
+    var percentLeft: Int {
+        if budgetVM.budget > 0 {
             return 100 - Int((budgetVM.costAccrued/(budgetVM.budget )) * 100)
-        }else{
+        } else {
             return 100
         }
     }
+    
     var body: some View {
-        ZStack{
+        ZStack {
             Circle()
                 .stroke(lineWidth: 15)
                 .opacity(0.3)
@@ -43,9 +44,8 @@ struct BudgetProgressBar: View {
 }
 
 struct SwiftUIView_Previews: PreviewProvider {
-    static let x = BudgetVM()
     static var previews: some View {
         BudgetProgressBar()
-            .environmentObject(x)
+            .environmentObject(BudgetVM())
     }
 }

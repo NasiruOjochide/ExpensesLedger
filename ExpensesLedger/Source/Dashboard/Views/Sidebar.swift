@@ -8,31 +8,35 @@
 import SwiftUI
 
 struct Sidebar: View {
-    @Binding var isSideBarOpened : Bool
-    @Binding var showBudgetAlert : Bool
-    @Binding var showExpenseSheet : Bool
-    @Binding var toolbarHidden : Bool
-    @Binding var showUpdatePasswordDialog : Bool
-    @EnvironmentObject var navVM : NavigationVM
-    @EnvironmentObject var signInVM : SignInEmailVM
+    @Binding var isSideBarOpened: Bool
+    @Binding var showBudgetAlert: Bool
+    @Binding var showExpenseSheet: Bool
+    @Binding var toolbarHidden: Bool
+    @Binding var showUpdatePasswordDialog: Bool
+    @EnvironmentObject var navVM: NavigationVM
+    @EnvironmentObject var onboardingVM: OnboardingViewModel
     var sideBarWidth = UIScreen.main.bounds.width * 0.7
-    var bgColor: Color =
-    Color(.init(
-        red: 52 / 255,
-        green: 70 / 255,
-        blue: 182 / 255,
-        alpha: 1))
+    var bgColor: Color = Color(
+        .init(
+            red: 52 / 255,
+            green: 70 / 255,
+            blue: 182 / 255,
+            alpha: 1
+        )
+    )
     
-    var secondaryColor: Color =
-    Color(.init(
-        red: 100 / 255,
-        green: 174 / 255,
-        blue: 255 / 255,
-        alpha: 1))
+    var secondaryColor: Color = Color(
+        .init(
+            red: 100 / 255,
+            green: 174 / 255,
+            blue: 255 / 255,
+            alpha: 1
+        )
+    )
     
     var body: some View {
         ZStack{
-            GeometryReader{ _ in
+            GeometryReader { _ in
                 EmptyView()
             }
             .background(.black.opacity(0.6))
@@ -49,55 +53,56 @@ struct Sidebar: View {
     }
     
     
-    var content : some View{
-        HStack(alignment: .top){
-            ZStack(alignment: .top){
+    var content : some View {
+        HStack(alignment: .top) {
+            ZStack(alignment: .top) {
                 bgColor
                 
                 menuChevron
                 
                 VStack(alignment: .leading, spacing: 20) {
-                    Text("Hello John")
+                    Text("Hello")
                     
-                    Button{
+                    Button {
                         isSideBarOpened.toggle()
                         toolbarHidden = false
                         showBudgetAlert = true
-                    }label: {
+                    } label: {
                         Text("Set Your Monthly Budget")
                             .tint(.black)
                     }
                     
-                    Button{
+                    Button {
                         isSideBarOpened.toggle()
                         toolbarHidden = false
                         showExpenseSheet = true
-                    }label: {
+                    } label: {
                         Text("Add Expense")
                             .tint(.black)
                     }
                     
                     Spacer()
                     
-                    Button{
+                    Button {
                         //reset password
                         isSideBarOpened.toggle()
                         toolbarHidden = false
                         showUpdatePasswordDialog.toggle()
-                    }label: {
+                    } label: {
                         Label("Reset Password", systemImage: "lock.rotation")
                             .padding(5)
                             .foregroundColor(.red)
                         
                     }
-                    Button{
-                        do{
-                            try signInVM.logOut()
-                            navVM.path.removeLast()
-                        }catch{
+                    
+                    Button {
+                        do {
+                            try onboardingVM.logOut()
+                            navVM.pop()
+                        } catch {
                             print(error.localizedDescription)
                         }
-                    }label: {
+                    } label: {
                         Label("Log out", systemImage: "iphone.and.arrow.forward")
                         //.bold()
                             .padding(5)
@@ -118,8 +123,8 @@ struct Sidebar: View {
     }
     
     
-    var menuChevron : some View{
-        ZStack{
+    var menuChevron: some View {
+        ZStack {
             RoundedRectangle(cornerRadius: 18)
                 .fill(bgColor)
                 .frame(width: 60, height: 60)
@@ -145,11 +150,9 @@ struct Sidebar: View {
 }
 
 struct Sidebar_Previews: PreviewProvider {
-    static let x = SignInEmailVM()
-    static let y = NavigationVM()
     static var previews: some View {
         Sidebar(isSideBarOpened: .constant(true), showBudgetAlert: .constant(true), showExpenseSheet: .constant(true), toolbarHidden: .constant(true), showUpdatePasswordDialog: .constant(true))
-            .environmentObject(x)
-            .environmentObject(y)
+            .environmentObject(OnboardingViewModel())
+            .environmentObject(NavigationVM())
     }
 }

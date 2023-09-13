@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ActivityView: View {
-    var message : String = "Loading"
-    @Binding var showView : Bool  /*{
+    var message: String = "Loading"
+    @Binding var showView: Bool  /*{
         didSet{
             if showView == true{
                 scaleValue = 3.0
@@ -21,9 +21,10 @@ struct ActivityView: View {
     @State private var scaleValue = 1.0
     @State private var opacityValue = 0.3
     @State private var rotationAmount : Double = 0
+    
     var body: some View {
         VStack {
-            ZStack{
+            ZStack {
                 Circle()
                     .stroke(.red.opacity(0.4), lineWidth: 15)
                     .frame(width: 150, height: 150)

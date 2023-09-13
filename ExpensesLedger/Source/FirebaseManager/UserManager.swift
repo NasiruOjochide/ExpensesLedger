@@ -9,26 +9,26 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
-final class UserManager{
+final class UserManager {
     static let shared = UserManager()
     
     private init(){}
     
     private let userCollection = Firestore.firestore().collection("users")
-    private func userDocument(userID : String) -> DocumentReference{
+    private func userDocument(userID: String) -> DocumentReference {
         userCollection.document(userID)
     }
     
-    func createNewUser(user : User) async throws{
-        var userData : [String:Any] = [
-            "user_id" : user.uid,
-            "is_anonymous" : user.isAnonymous,
-            "date_created" : Timestamp()
+    func createNewUser(user: User) async throws {
+        var userData: [String: Any] = [
+            "user_id": user.uid,
+            "is_anonymous": user.isAnonymous,
+            "date_created": Timestamp()
             ]
             if let email = user.email {
                 userData["email"] = email
             }
-        if let photoURL = user.photoURL{
+        if let photoURL = user.photoURL {
             userData["photo_url"] = photoURL
         }
         
@@ -36,7 +36,7 @@ final class UserManager{
         
     }
     
-    func getUser(userID : String) async throws -> DBUser{
+    func getUser(userID: String) async throws -> DBUser {
         let snapshot = try await userDocument(userID: userID).getDocument()
         
         guard let data = snapshot.data(), let userId = data["user_id"] as? String else{

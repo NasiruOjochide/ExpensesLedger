@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NavigationConstants{
+struct NavigationConstants {
     static let contentViewPage = "ContentViewPage"
     static let signUpPage = "SignUpPage"
     static let forgotPasswordPage = "ForgotPasswordPage"

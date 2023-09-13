@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ExpenseDetailsView: View {
-    @EnvironmentObject var navVM : NavigationVM
-    //@Binding var navPath : NavigationPath
-    var expense : Expense
+    @EnvironmentObject var navVM: NavigationVM
+    var expense: Expense
+    
     var body: some View {
-        VStack{
+        VStack {
             Text(expense.title)
                 .font(.title.bold())
                 .foregroundColor(.red)
@@ -21,27 +21,20 @@ struct ExpenseDetailsView: View {
             Text(expense.description)
                 .font(.body.italic())
                 .padding()
-            VStack{
-                HStack(alignment: .center){
+            VStack {
+                HStack(alignment: .center) {
                     Text("Amount: \(expense.amount.formatted(.currency(code: Locale.current.currencySymbol ?? "NGN")))")
                         .padding()
                 }
-                HStack(alignment: .center){
+                HStack(alignment: .center) {
                     Text(expense.date.formatted(date: .abbreviated, time: .shortened))
                         .padding()
                 }
             }
             
-            Button{
-                navVM.path.removeLast()
-                print(navVM.path.count)
-            }label: {
-                Text("Test pop 2 screens")
-            }
-            
             Spacer()
         }
-        .onAppear{
+        .onAppear {
             print(navVM.path.count)
         }
         .navigationTitle("Details")
@@ -50,10 +43,8 @@ struct ExpenseDetailsView: View {
 }
 
 struct ExpenseDetailsView_Previews: PreviewProvider {
-    static let expense = Expense(id: "", title: "groceries", description: "bought food stuff", amount: 2000, date: .now )
-    static var nav = NavigationVM()
     static var previews: some View {
-        ExpenseDetailsView(expense: expense)
-            .environmentObject(nav)
+        ExpenseDetailsView(expense: Expense(id: "", title: "groceries", description: "bought food stuff", amount: 2000, date: .now ))
+            .environmentObject(NavigationVM())
     }
 }

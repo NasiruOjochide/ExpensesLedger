@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		292815D029F41748007EB6E0 /* BudgetVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292815CF29F41748007EB6E0 /* BudgetVM.swift */; };
+		292EDEFF2AB0FECB00E04723 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292EDEFE2AB0FECB00E04723 /* Routes.swift */; };
 		293A4D0129F1701E008AFECA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 293A4D0029F1701E008AFECA /* GoogleService-Info.plist */; };
 		293A4D0429F175C5008AFECA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 293A4D0329F175C5008AFECA /* FirebaseAnalytics */; };
 		293A4D0629F175C5008AFECA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 293A4D0529F175C5008AFECA /* FirebaseAuth */; };
@@ -23,7 +24,7 @@
 		295D28CD29EF476B008D9D7F /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D28CC29EF476B008D9D7F /* Expense.swift */; };
 		297EDFC92A0A5E9D00BF2221 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297EDFC82A0A5E9D00BF2221 /* PasswordField.swift */; };
 		299EE44329F81D2D008217F7 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299EE44229F81D2D008217F7 /* AuthenticationManager.swift */; };
-		299EE44529F82034008217F7 /* SignInEmailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299EE44429F82034008217F7 /* SignInEmailVM.swift */; };
+		299EE44529F82034008217F7 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299EE44429F82034008217F7 /* OnboardingViewModel.swift */; };
 		299EE44929F965C0008217F7 /* NavigationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299EE44829F965C0008217F7 /* NavigationVM.swift */; };
 		299EE44B29FA926F008217F7 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299EE44A29FA926F008217F7 /* Sidebar.swift */; };
 		29A11CFC2A05662500773B85 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A11CFB2A05662500773B85 /* ForgotPasswordView.swift */; };
@@ -34,12 +35,13 @@
 		29DEF97B2A017E4100AC2338 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DEF97A2A017E4100AC2338 /* UserManager.swift */; };
 		29DEF97D2A018AA800AC2338 /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DEF97C2A018AA800AC2338 /* DBUser.swift */; };
 		29DEF97F2A018B1700AC2338 /* AuthDataResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DEF97E2A018B1700AC2338 /* AuthDataResultModel.swift */; };
-		29EEA5FD29F54AED00CC47F2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EEA5FC29F54AED00CC47F2 /* LoginView.swift */; };
+		29EEA5FD29F54AED00CC47F2 /* SignInParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EEA5FC29F54AED00CC47F2 /* SignInParent.swift */; };
 		29EEA5FF29F54AFD00CC47F2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EEA5FE29F54AFD00CC47F2 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		292815CF29F41748007EB6E0 /* BudgetVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetVM.swift; sourceTree = "<group>"; };
+		292EDEFE2AB0FECB00E04723 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		293A4D0029F1701E008AFECA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		293A4D0929F1778D008AFECA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		293A4D0B29F17E6E008AFECA /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
@@ -53,7 +55,7 @@
 		295D28CC29EF476B008D9D7F /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		297EDFC82A0A5E9D00BF2221 /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
 		299EE44229F81D2D008217F7 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
-		299EE44429F82034008217F7 /* SignInEmailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailVM.swift; sourceTree = "<group>"; };
+		299EE44429F82034008217F7 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		299EE44829F965C0008217F7 /* NavigationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVM.swift; sourceTree = "<group>"; };
 		299EE44A29FA926F008217F7 /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		29A11CFB2A05662500773B85 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -64,7 +66,7 @@
 		29DEF97A2A017E4100AC2338 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		29DEF97C2A018AA800AC2338 /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
 		29DEF97E2A018B1700AC2338 /* AuthDataResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataResultModel.swift; sourceTree = "<group>"; };
-		29EEA5FC29F54AED00CC47F2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		29EEA5FC29F54AED00CC47F2 /* SignInParent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInParent.swift; sourceTree = "<group>"; };
 		29EEA5FE29F54AFD00CC47F2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,14 +84,118 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		292EDEF32AB0CDAB00E04723 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				292EDEFD2AB0D09100E04723 /* Profile */,
+				292EDEFC2AB0D03300E04723 /* Navigation */,
+				292EDEF52AB0CE2200E04723 /* Dashboard */,
+				292EDEF42AB0CE1600E04723 /* Onboarding */,
+				29DEF9792A017D9700AC2338 /* FirebaseManager */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		292EDEF42AB0CE1600E04723 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				292EDEFB2AB0CF6100E04723 /* ViewModels */,
+				292EDEFA2AB0CF5700E04723 /* Models */,
+				292EDEF92AB0CF4F00E04723 /* Views */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		292EDEF52AB0CE2200E04723 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				292EDEF82AB0CE5F00E04723 /* ViewModels */,
+				292EDEF72AB0CE5700E04723 /* Models */,
+				292EDEF62AB0CE4E00E04723 /* Views */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		292EDEF62AB0CE4E00E04723 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				295D28BE29EF337F008D9D7F /* ContentView.swift */,
+				299EE44A29FA926F008217F7 /* Sidebar.swift */,
+				293A4D0B29F17E6E008AFECA /* AddExpenseView.swift */,
+				29A11CFF2A05758000773B85 /* ExpenseDetailsView.swift */,
+				295D28CA29EF37FB008D9D7F /* BudgetProgressBar.swift */,
+				29B75C4029FE8E69003923C4 /* ActivityView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		292EDEF72AB0CE5700E04723 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				295D28CC29EF476B008D9D7F /* Expense.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		292EDEF82AB0CE5F00E04723 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				292815CF29F41748007EB6E0 /* BudgetVM.swift */,
+				293A4D0D29F197A3008AFECA /* ExpensesVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		292EDEF92AB0CF4F00E04723 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				29EEA5FC29F54AED00CC47F2 /* SignInParent.swift */,
+				29EEA5FE29F54AFD00CC47F2 /* SignUpView.swift */,
+				29A11CFB2A05662500773B85 /* ForgotPasswordView.swift */,
+				297EDFC82A0A5E9D00BF2221 /* PasswordField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		292EDEFA2AB0CF5700E04723 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				29DEF97E2A018B1700AC2338 /* AuthDataResultModel.swift */,
+				29DEF97C2A018AA800AC2338 /* DBUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		292EDEFB2AB0CF6100E04723 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				299EE44429F82034008217F7 /* OnboardingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		292EDEFC2AB0D03300E04723 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				299EE44829F965C0008217F7 /* NavigationVM.swift */,
+				29A11CFD2A056FCD00773B85 /* NavigationConstants.swift */,
+				292EDEFE2AB0FECB00E04723 /* Routes.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		292EDEFD2AB0D09100E04723 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				29DEF9772A015FB800AC2338 /* ProfileVM.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		295D28B029EF337F008D9D7F = {
 			isa = PBXGroup;
 			children = (
 				295D28BB29EF337F008D9D7F /* ExpensesLedger */,
-				29EEA60129F5519700CC47F2 /* Views */,
-				29EEA60229F551FE00CC47F2 /* Models */,
-				29EEA60029F54BF800CC47F2 /* View Models */,
-				29DEF9792A017D9700AC2338 /* FierbaseManager */,
 				295D28BA29EF337F008D9D7F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,10 +211,11 @@
 		295D28BB29EF337F008D9D7F /* ExpensesLedger */ = {
 			isa = PBXGroup;
 			children = (
+				292EDEF32AB0CDAB00E04723 /* Source */,
 				295D28BC29EF337F008D9D7F /* ExpensesLedgerApp.swift */,
+				293A4D0929F1778D008AFECA /* AppDelegate.swift */,
 				293A4D0029F1701E008AFECA /* GoogleService-Info.plist */,
 				295D28C029EF3380008D9D7F /* Assets.xcassets */,
-				293A4D0929F1778D008AFECA /* AppDelegate.swift */,
 				295D28C229EF3380008D9D7F /* Preview Content */,
 			);
 			path = ExpensesLedger;
@@ -122,53 +229,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		29DEF9792A017D9700AC2338 /* FierbaseManager */ = {
+		29DEF9792A017D9700AC2338 /* FirebaseManager */ = {
 			isa = PBXGroup;
 			children = (
 				299EE44229F81D2D008217F7 /* AuthenticationManager.swift */,
 				29DEF97A2A017E4100AC2338 /* UserManager.swift */,
 			);
-			path = FierbaseManager;
-			sourceTree = "<group>";
-		};
-		29EEA60029F54BF800CC47F2 /* View Models */ = {
-			isa = PBXGroup;
-			children = (
-				292815CF29F41748007EB6E0 /* BudgetVM.swift */,
-				293A4D0D29F197A3008AFECA /* ExpensesVM.swift */,
-				299EE44429F82034008217F7 /* SignInEmailVM.swift */,
-				299EE44829F965C0008217F7 /* NavigationVM.swift */,
-				29DEF9772A015FB800AC2338 /* ProfileVM.swift */,
-			);
-			path = "View Models";
-			sourceTree = "<group>";
-		};
-		29EEA60129F5519700CC47F2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				295D28BE29EF337F008D9D7F /* ContentView.swift */,
-				299EE44A29FA926F008217F7 /* Sidebar.swift */,
-				293A4D0B29F17E6E008AFECA /* AddExpenseView.swift */,
-				29A11CFF2A05758000773B85 /* ExpenseDetailsView.swift */,
-				29EEA5FC29F54AED00CC47F2 /* LoginView.swift */,
-				297EDFC82A0A5E9D00BF2221 /* PasswordField.swift */,
-				29EEA5FE29F54AFD00CC47F2 /* SignUpView.swift */,
-				29A11CFB2A05662500773B85 /* ForgotPasswordView.swift */,
-				295D28CA29EF37FB008D9D7F /* BudgetProgressBar.swift */,
-				29B75C4029FE8E69003923C4 /* ActivityView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		29EEA60229F551FE00CC47F2 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				295D28CC29EF476B008D9D7F /* Expense.swift */,
-				29DEF97C2A018AA800AC2338 /* DBUser.swift */,
-				29DEF97E2A018B1700AC2338 /* AuthDataResultModel.swift */,
-				29A11CFD2A056FCD00773B85 /* NavigationConstants.swift */,
-			);
-			path = Models;
+			path = FirebaseManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,18 +318,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				295D28CD29EF476B008D9D7F /* Expense.swift in Sources */,
+				292EDEFF2AB0FECB00E04723 /* Routes.swift in Sources */,
 				295D28BF29EF337F008D9D7F /* ContentView.swift in Sources */,
 				299EE44329F81D2D008217F7 /* AuthenticationManager.swift in Sources */,
 				292815D029F41748007EB6E0 /* BudgetVM.swift in Sources */,
 				29A11D002A05758000773B85 /* ExpenseDetailsView.swift in Sources */,
-				29EEA5FD29F54AED00CC47F2 /* LoginView.swift in Sources */,
+				29EEA5FD29F54AED00CC47F2 /* SignInParent.swift in Sources */,
 				295D28BD29EF337F008D9D7F /* ExpensesLedgerApp.swift in Sources */,
 				299EE44929F965C0008217F7 /* NavigationVM.swift in Sources */,
 				293A4D0C29F17E6E008AFECA /* AddExpenseView.swift in Sources */,
 				29B75C4129FE8E69003923C4 /* ActivityView.swift in Sources */,
 				29EEA5FF29F54AFD00CC47F2 /* SignUpView.swift in Sources */,
 				293A4D0A29F1778D008AFECA /* AppDelegate.swift in Sources */,
-				299EE44529F82034008217F7 /* SignInEmailVM.swift in Sources */,
+				299EE44529F82034008217F7 /* OnboardingViewModel.swift in Sources */,
 				29DEF97D2A018AA800AC2338 /* DBUser.swift in Sources */,
 				293A4D0E29F197A3008AFECA /* ExpensesVM.swift in Sources */,
 				297EDFC92A0A5E9D00BF2221 /* PasswordField.swift in Sources */,

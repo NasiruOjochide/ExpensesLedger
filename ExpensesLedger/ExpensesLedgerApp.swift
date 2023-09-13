@@ -11,13 +11,13 @@ import SwiftUI
 struct ExpensesLedgerApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate 
-    @StateObject var signInVM = SignInEmailVM()
+    @StateObject var onboardingVM = OnboardingViewModel()
     @StateObject var navVM = NavigationVM()
     
     var body: some Scene {
         WindowGroup {
-            LoginView()
-                .environmentObject(signInVM)
+            SignInParent()
+                .environmentObject(onboardingVM)
                 .environmentObject(navVM)
         }
     }
